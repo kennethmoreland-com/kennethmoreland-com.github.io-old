@@ -79,6 +79,8 @@
               <p>This page provides advice for using colors in scientific visualization. More specifically, this page provides color maps that you can use while using pseudocoloring of a scalar field. The color maps are organized by how and where they are best used. Each color map shows some example usage and provides color tables in CSV format so that they can readily be used in rendering system textures or entered into visualization software. For simplicity, the color tables are provided in many different lengths and with colors expressed in both bytes (integers between 0 and 255) and floats (decimals between 0.0 and 1.0). Each color map also has instructions on getting these colors in the <a href="http://paraview.org">ParaView visualization application</a>. Where applicable, Jupyter Python notebooks containing details about how each color map is generated. You can either run the code directly with the <a href="http://ipython.org/notebook.html">appropriate software</a> or copy/paste scripts into your own interpreter. Each color map below is demonstrated on a 2D heat map and 3D surface. The data for both can be downloaded <a href="https://1drv.ms/u/s!Aub-LzOy6dCvgXLcaAPLjN1Mxh_E?e=hpY4oA">here</a>.</p>
               <p>This work originates from the paper &quot;<a href="#publication"><span class="pubTitle">Why We Use Bad Color Maps and What You Can Do About It</span></a>.&quot; Details about this paper are given below. Another related publication is &quot;<a href="../color-maps/"><span class="pubTitle">Diverging Color Maps for Scientific Visualization</span></a>,&quot; which describes specifics about one particular type of color map. Details of this paper and the techniques used can be found on <a href="../color-maps/">its companion page</a>.</p>
               <h2 id="colormaps">Color Maps</h2>
+              <p>Below is a collection of color maps that you can use to apply in scientific visualization.</p>
+              <p>A note about license. All <em>original</em> color maps on this page are released as <a href="https://creativecommons.org/choose/zero/">public domain (CC0)</a>. I waive all copyrights and related rights so that these color maps may be used freely. However, please note that much of this work is borrowed or derivative. I have avoided works where someone has exercised private intellectual property rights and kept to open work, but some of these color maps might be covered under other licensing agreements. I make my best effort to identify the source of any borrowed or derivative work and the respective license.</p>
               <h3 id="colormaps-3d">3D Surfaces</h3>
               <p>In general a color map should use changes in luminance (brightness) to communicate changes in value. However, in a 3D scene, shading cues, which are themselves changes in brightness, are vital to understanding shapes. Thus, you have to avoid having the brightness changes in the color map interfere with the brightness changes in shading and vice versa. You achieve this by limiting the color map to reasonably bright colors. Because this reduces the total range of brightness in the color map, I find it most effective to use a diverging (double-ended) color map.</p>
               <article id="cool-warm-smooth">
@@ -91,6 +93,7 @@
                 <!--<p><a href="smooth-cool-warm/smooth-cool-warm-paraview-colors.json">Download ParaView color map file.</a></p>-->
                 <p>This color map is available in ParaView as the &quot;Cool to Warm&quot; preset.</p>
                 <p><a href="https://github.com/kennethmoreland-com/kennethmoreland-com.github.io/blob/master/color-advice/smooth-cool-warm/smooth-cool-warm.ipynb">Python code to generate these colors.</a></p>
+                <p>This color map was first featured in ParaView and is covered by <a href="https://www.paraview.org/paraview-license/">its BSD license</a>.</p>
               </article>
               <article id="cool-warm-bent">
                 <h4>Bent Cool Warm</h4>
@@ -101,6 +104,7 @@
                 <p><a href="bent-cool-warm/bent-cool-warm-tables.zip">Download all color tables.</a></p>
                 <p><a href="bent-cool-warm/bent-cool-warm-paraview-colors.json">Download ParaView color map file.</a></p>
                 <p><a href="https://github.com/kennethmoreland-com/kennethmoreland-com.github.io/blob/master/color-advice/bent-cool-warm/bent-cool-warm.ipynb">Python code to generate these colors.</a></p>
+                <p>This color map is derivative of the cool to warm and might be covered under <a href="https://www.paraview.org/paraview-license/">ParaView's BSD license</a>.</p>
               </article>
               <article id="viridis">
                 <h4>Viridis</h4>
@@ -111,6 +115,7 @@
                 <p><a href="viridis/viridis-tables.zip">Download all color tables</a>.</p>
                 <p>This color map is available in ParaView as the &quot;Viridis (matplotlib)&quot; preset.</p>
                 <p><a href="https://github.com/kennethmoreland-com/kennethmoreland-com.github.io/blob/master/color-advice/viridis/viridis.ipynb">Python code to generate these colors</a>.</p>
+                <p>This color map was first featured in the matplotlib library and is covered by <a href="https://matplotlib.org/users/license.html">matplotlib's BSD-compatible license</a>.</p>
               </article>
               <article id="plasma">
                 <h4>Plasma</h4>
@@ -121,6 +126,7 @@
                 <p><a href="plasma/plasma-tables.zip">Download all color tables</a>.</p>
                 <p>This color map is available in ParaView as the &quot;Plasma (matplotlib)&quot; preset.</p>
                 <p><a href="https://github.com/kennethmoreland-com/kennethmoreland-com.github.io/blob/master/color-advice/plasma/plasma.ipynb">Python code to generate these colors</a>.</p>
+                <p>This color map was first featured in the matplotlib library and is covered by <a href="https://matplotlib.org/users/license.html">matplotlib's BSD-compatible license</a>.</p>
               </article>
               <h3 id="colormaps-2d">2D Images</h3>
               <p>When pseudocoloring is applied to the flat surface of the image, you do not have to contend with 3D shading. In this case, you are free to use the entire range of brightness from completely dark to full white. These color maps take advantage of that extra range.</p>
@@ -134,6 +140,7 @@
               <p><a href="black-body/black-body-tables.zip">Download all color tables.</a></p>
               <p><a href="black-body/black-body-paraview-colors.json">Download ParaView color map file.</a></p>
               <p><a href="https://github.com/kennethmoreland-com/kennethmoreland-com.github.io/blob/master/color-advice/black-body/black-body.ipynb">Python code to generate these colors.</a></p>
+              <p>Variations of this color map have been in literature <a href="https://doi.org/10.1016/0301-5629(83)90086-8">at least as far back as 1983</a>. To the best of my knowledge, no one claims intellectual property on these colors.</p>
               </article>
               <!--
               <article id="extended-black-body">
@@ -156,16 +163,18 @@
                 <p><a href="inferno/inferno-tables.zip">Download all color tables.</a></p>
                 <p>This color map is available in ParaView as the &quot;Inferno (matplotlib)&quot; preset.</p>
                 <p><a href="https://github.com/kennethmoreland-com/kennethmoreland-com.github.io/blob/master/color-advice/inferno/inferno.ipynb">Python code to generate these colors.</a></p>
+                <p>This color map was first featured in the matplotlib library and is covered by <a href="https://matplotlib.org/users/license.html">matplotlib's BSD-compatible license</a>.</p>
               </article>
               <article id="kindlmann">
                 <h4> Kindlmann</h4>
-                <p>The Kindlmann color map uses the colors first proposed in <a href="http://www.cs.utah.edu/~gk/papers/vis02/">a paper by Kindlmann, Reinhard, and Creem</a>. The map is basically the rainbow color map with the luminance adjusted such that it monotonically changes, making it much more perceptually viable.</p>
+                <p>The Kindlmann color map uses the colors first proposed in <a href="https://doi.org/10.1109/VISUAL.2002.1183788">a paper by Kindlmann, Reinhard, and Creem</a>. The map is basically the rainbow color map with the luminance adjusted such that it monotonically changes, making it much more perceptually viable.</p>
                 <p><img src="kindlmann/kindlmann.svg" alt="" width="130" height="300"/>&nbsp;<img src="kindlmann/kindlmann-2d.png" width="300" height="300" alt=""/>&nbsp;<img src="kindlmann/kindlmann-3d.png" width="300" height="300" alt=""/></p>
                 <p>Color Tables (byte): <a href="kindlmann/kindlmann-table-byte-0008.csv">8</a> <a href="kindlmann/kindlmann-table-byte-0016.csv">16</a> <a href="kindlmann/kindlmann-table-byte-0032.csv">32</a> <a href="kindlmann/kindlmann-table-byte-0064.csv">64</a> <a href="kindlmann/kindlmann-table-byte-0128.csv">128</a> <a href="kindlmann/kindlmann-table-byte-0256.csv">256</a> <a href="kindlmann/kindlmann-table-byte-0512.csv">512</a> <a href="kindlmann/kindlmann-table-byte-1024.csv">1024</a></p>
                 <p>Color Tables (float): <a href="kindlmann/kindlmann-table-float-0008.csv">8</a> <a href="kindlmann/kindlmann-table-float-0016.csv">16</a> <a href="kindlmann/kindlmann-table-float-0032.csv">32</a> <a href="kindlmann/kindlmann-table-float-0064.csv">64</a> <a href="kindlmann/kindlmann-table-float-0128.csv">128</a> <a href="kindlmann/kindlmann-table-float-0256.csv">256</a> <a href="kindlmann/kindlmann-table-float-0512.csv">512</a> <a href="kindlmann/kindlmann-table-float-1024.csv">1024</a></p>
                 <p><a href="kindlmann/kindlmann-tables.zip">Download all color tables.</a></p>
                 <p><a href="kindlmann/kindlmann-paraview-colors.json">Download ParaView color map file.</a></p>
                 <p><a href="https://github.com/kennethmoreland-com/kennethmoreland-com.github.io/blob/master/color-advice/kindlmann/kindlmann.ipynb">Python code to generate these colors.</a></p>
+                <p>Since the original proposal, this color map has been used in numerous scientific works and software products. To the best of my knowledge, no one claims intellectual property on this color map.</p>
               </article>
               <article id="extended-kindlmann">
                 <h4>Extended Kindlmann</h4>
@@ -176,6 +185,7 @@
                 <p><a href="extended-kindlmann/extended-kindlmann-tables.zip">Download all color tables.</a></p>
                 <p><a href="extended-kindlmann/extended-kindlmann-paraview-colors.json">Download ParaView color map file.</a></p>
                 <p><a href="https://github.com/kennethmoreland-com/kennethmoreland-com.github.io/blob/master/color-advice/extended-kindlmann/extended-kindlmann.ipynb">Python code to generate these colors.</a></p>
+                <p>This color map is a derivative of the Kindlmann color map. Any other similarities to other color maps are coincidental.</p>
               </article>
               <h2 id="resources">Other Resources</h2>
               <h3>Color Brewer</h3>
