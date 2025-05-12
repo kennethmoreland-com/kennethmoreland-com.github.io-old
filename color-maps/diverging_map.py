@@ -225,6 +225,10 @@ class ColorMapCreator:
         return self.Lab2rgb(self.Msh2Lab(Msh))
     #-
 
+    def angleDiff(self, angle1, angle2):
+        diff = np.abs(angle1 - angle2)
+        return min(diff, 2 * np.pi - diff)
+
     def adjustHue(self, MshSat, Munsat):
         """
         Function to provide an adjusted hue when interpolating to an 
@@ -258,7 +262,7 @@ class ColorMapCreator:
         M2, s2, h2 = Msh2.tolist()
         
         # If points saturated and distinct, place white in middle
-        if (s1>0.05) and (s2>0.05) and ( np.abs(h1-h2) > np.pi/3. ):
+        if (s1>0.05) and (s2>0.05) and ( self.angleDiff(h1, h2) > np.pi/3. ):
             Mmid = max([M1, M2, 88.])
             if interp < 0.5:
                 M2 = Mmid
