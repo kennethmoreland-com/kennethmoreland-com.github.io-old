@@ -47,7 +47,7 @@ class ColorMapCreator:
     # ============================= Functions =================================
 
 
-    def __init__(self, RGB1, RGB2, numColors = 33., divide = 255., 
+    def __init__(self, RGB1, RGB2, numColors = 33, divide = 255., 
                   method = "moreland", filename = ""):
         
         # create a class variable for the number of colors
@@ -71,7 +71,7 @@ class ColorMapCreator:
         # print out the colormap of save it to file named filename
         if filename == "":
             for c in colorMap:
-                    print "{0}, {1}, {2}".format(c[0], c[1], c[2])
+                    print("{0}, {1}, {2}".format(c[0], c[1], c[2]))
         else:
             with open(filename, "w") as f:
                 for c in colorMap:
